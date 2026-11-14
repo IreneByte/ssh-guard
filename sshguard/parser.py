@@ -8,7 +8,7 @@ MONTHS = {"Jan": 1, "Feb": 2, "Mar": 3, "Apr": 4, "May": 5, "Jun": 6,
 # Example line:
 # Nov 10 22:14:03 myhost sshd[1234]: Failed password for invalid user admin from 203.0.113.5 port 52341 ssh2
 FAILED_LOGIN = re.compile(
-    r"^(\w{3})\s+(\d{2})\s+(\d{2}:\d{2}:\d{2})\s+\S+\s+"   # month, day, time, host name
+    r"^(\w{3})\s+(\d{1,2})\s+(\d{2}:\d{2}:\d{2})\s+\S+\s+"   # month, day, time, host name
     r"sshd(?:-session)?(?:\[\d+\])?:\s+"                      # process name (newer systems say sshd-session)
     r"Failed password for (?:invalid user )?\S+ from (\S+) port"
 )
