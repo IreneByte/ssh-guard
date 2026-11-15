@@ -18,7 +18,7 @@ def count_failures(lines, now, window_minutes):
         if result is None:
             continue  # not a failed login
         when, ip = result
-        if when > now:
+        if when < start or when > now:
             outside += 1  # too old (or in the future), so ignore it
             continue
         counts[ip] += 1
