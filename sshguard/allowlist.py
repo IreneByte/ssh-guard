@@ -9,7 +9,7 @@ def load_allowlist(path):
     entries = list(ALWAYS_SAFE)
     with open(path) as f:
         for line in f:
-            line = line.strip()  # cut off comments and spaces
+            line = line.split("#")[0].strip()  # cut off comments and spaces
             if line:  # skip blank lines
                 entries.append(line)
 
